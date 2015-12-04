@@ -2,6 +2,7 @@ class TeachersController < ApplicationController
   before_filter :authenticate_user!
 
   expose(:teachers)
+  expose(:subject_items)
   expose(:teacher, attributes: :teacher_params)
   expose(:teacher_subject_items) { teacher.subject_items }
 
