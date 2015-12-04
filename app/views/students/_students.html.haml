@@ -2,4 +2,8 @@
   %tr
     %th= student.first_name
     %th= student.last_name
-    %th= link_to t('shared.show'), student_path(student), class: 'btn btn-default', title: 'show'
+    %th
+      = link_to t('shared.show'), student_path(student), class: 'btn btn-default', title: 'show'
+      = link_to t('shared.show_subject_items'), student_subjects_path(student), class: 'btn btn-default', title: 'show subjects'
+      = link_to t('shared.edit'), edit_student_path(student), class: 'btn btn-default', title: 'edit'
+      = link_to t('shared.delete'), student, method: :delete, class: 'btn btn-danger', title: 'delete'
