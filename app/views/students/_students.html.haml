@@ -1,0 +1,5 @@
+- students.each do |student|
+  %tr
+    %th= student.first_name
+    %th= student.last_name
+    %th= link_to t('shared.show'), student_path(student), class: 'btn btn-default', title: 'show'

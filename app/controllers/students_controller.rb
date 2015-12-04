@@ -2,6 +2,7 @@ class StudentsController < ApplicationController
   before_filter :authenticate_user!
 
   expose(:student, attributes: :student_params)
+  expose(:students)
   expose(:student_subject_items) { student.subject_items }
 
   def create
