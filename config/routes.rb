@@ -4,10 +4,14 @@ Rails.application.routes.draw do
     get :subjects
   end
 
-  resource :teachers
+  resources :teachers
 
   resource :reports do
     get :subjects
+  end
+
+  resource :subjects do
+    get :report
   end
 
   devise_for :user
