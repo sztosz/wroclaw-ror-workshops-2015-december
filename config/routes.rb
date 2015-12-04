@@ -12,9 +12,7 @@ Rails.application.routes.draw do
     get :subjects
   end
 
-  resource :subjects do
-    get :report
-  end
+  get '/reports/subjects(.:format)', to: 'reports#subjects', as: 'report_subjects'
 
   devise_for :user
 end
