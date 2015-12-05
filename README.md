@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/sztosz/wroclaw-ror-workshops-2015-december.svg?branch=master)](https://travis-ci.org/sztosz/wroclaw-ror-workshops-2015-december)
+
 RoR Workshops
 ================
 
