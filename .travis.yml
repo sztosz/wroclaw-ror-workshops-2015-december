@@ -1,10 +1,17 @@
 language: ruby
 rvm:
-  - 2.2.3
+- 2.2.3
 before_script:
-  - cp config/database.travis.yml config/database.yml
-  - psql -c 'create database workshops_test;' -U postgres
+- cp config/database.travis.yml config/database.yml
+- psql -c 'create database workshops_test;' -U postgres
 addons:
   postgresql: '9.3'
 env:
-  - DB=postgresql
+- DB=postgresql
+deploy:
+  provider: heroku
+  api_key:
+    secure: WQ6akxiMIhuu64W2aRLTQARz8/jGQoHC0lDs5pKW22g0zzKmOsYkibF5h0UohApNvIpdQhDjMtQd+0iclSxkZkZZWSIuyrlBPS2dBT//MIr4MPuxJ/T1j+NPbXX8GH6mk7ItufXVFJjKEHd9P87Rtz/oUtbIVU+a6VgtuFP3tGnt53C8iss8FY4TDrSjSLwlHsWbjtWN/6y0ZXIpFoc/5q1gCAMR+RA8bMNZvJJ5RrGo4yeESgrUyLwzhAS8wfgtnrJDPG8NR5wOsXHKjaIr8jK/67GiUNsT+iByx8qX55zaYMcM0xxKUghw0wXEEY0eMT1mQzp0S8mtVka04TzbQNKUUs6xPlFbB5UMmaeI3uJkorLUAqT85gudcNp04Aq9NmzFw+xrllDrbZQE107qfglieO/eXLYGsFASQunDSp8ckDhZli5Dob9Wty56qm1UI8Xv1SrEovLnV/KDrmXcYUc4mIYH+ls6DrdBhrzVTOD8XaA4D+KQNSHG1Ik+CYrSjWoteOmX3z8Z65rxFxKjYTHSbbmhR3CPWq6n438LfFXfOdKr8/H2yeWsVckYEGdJEKhMUhfbtiUg4oigSB8mCj4Egko+SX7WEd/9rlYJ+WT7Za8iNXqi+XbJ2PWuzlvqYJhNWtCu7wRDVfinWOw3POx+abNRQBeWbN1QKRL53wM=
+  app: wroclaw-ror-workshops-2015-december
+  on:
+    repo: sztosz/wroclaw-ror-workshops-2015-december
